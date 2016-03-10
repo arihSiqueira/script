@@ -1,3 +1,27 @@
+function Animal(){
+	this.barulho = '';
+}
+
+Animal.prototype = {
+	fazerBarulho: function(){
+		return this.barulho;
+	}
+}
+
+
+function Gato(){
+	console.log('ver');
+	console.log(this);
+	Animal.call();
+	console.log(this);
+	this.barulho =  'Miau'
+}
+
+function Cachorro(){
+	Animal.call(this);
+	this.barulho = 'Au'
+}
+
 function Manada(){
 	this.manadas = [];
 }
@@ -11,21 +35,14 @@ Manada.prototype = {
 	}
 };
 
-function Animal(){
-	
-}
-
-function Gato(){
-	return 'Miau'
-}
-
-function Cachorro(){
-	return 'Au'
-}
-
 function ManadaVirgula(){
 	Manada.call(this);
 	
+}
+
+ManadaVirgula.barulho = function(){
+
+
 }
 
 
